@@ -1,12 +1,14 @@
 <?php
-include_once('teste.php');
-$output;
-$score = 0;
+include_once('api.php');
 
-if ($_POST['question1'] == 'data[{"silver_medals"}]') {
+$score = 0;
+$silver_medals = $data['data'][0]['silver_medals'];
+
+if ($_POST['question1'] == $silver_medals) {
     $score++;
-}
+};
 
 header("Location: result.php?score=$score");
 exit();
-?>
+
+?> 
