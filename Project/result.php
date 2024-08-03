@@ -8,6 +8,6 @@
 <body>
     <a href="index.php">Recomeçar</a>
     <h1>Resultado</h1>
-    <p>Sua pontuação: <?php echo $_GET['score']; ?> de 3</p>
+    <p>Sua pontuação: <?php echo $_GET['score']; ?> de 10</p>
 </body>
 </html>
