@@ -11,7 +11,7 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     </header>
     <section>
-        <form action="question.php">
+        <form action="question1.php">
             <button>Realizar o quiz</button>
         </form>
     </section>

@@ -1,5 +1,5 @@
 <?php
-include_once('API/api-countries.php');
+include_once('API/processed.php');
 
 ?>
 <!DOCTYPE html>
@@ -12,17 +12,18 @@ include_once('API/api-countries.php');
 <body>
     <a href="index.php">Voltar</a>
     <h1>Quiz de Conhecimentos Gerais</h1>
-    <form action="process.php" method="post">
-        <p>5. Quantas medalhas de prata a China tem?</p>
-        <input type="radio" name="question1" value="<?php echo $data_countries['data'][0]['silver_medals']; ?>"><span><?php echo $data_countries['data'][0]['silver_medals']; ?></span><br>
-        <input type="radio" name="question1" id="radio1"><span id="radioValue1">9</span><br>
-        <input type="radio" name="question1" id="radio2"><span id="radioValue2">9</span><br>
-        <input type="radio" name="question1" id="radio3"><span id="radioValue3">9</span><br><br>
+    <form action="process.php" method="post" required>
 
-        <input type="submit" value="Enviar">
+        <p>6. Quantas medalhas de prata a China conquistou até o momento?</p>
+        <input type="radio" name="question6" value="<?php echo $data_countries['data'][0]['silver_medals']; ?>"><span><?php echo $data_countries['data'][0]['silver_medals']; ?></span><br>
+        <input type="radio" name="question6" id="radio1"><span id="radioValue1">9</span><br>
+        <input type="radio" name="question6" id="radio2"><span id="radioValue2">9</span><br>
+        <input type="radio" name="question6" id="radio3"><span id="radioValue3">9</span><br><br>
+
+        <a href="question7.php">Próxima</a>
     </form>
     <script>
-        const silverMedals = <?php echo $data_countries['data'][0]['silver_medals']; ?>;
+        const silverMedals = <?php echo $data_countries; ?>;
 
         function generateUniqueRandomNumbers(min, max, count, exclude) {
             let numbers = new Set();
@@ -35,7 +36,7 @@ include_once('API/api-countries.php');
             return Array.from(numbers);
         }
 
-        const randomValues = generateUniqueRandomNumbers(1, 30, 3, silverMedals);
+        const randomValues = generateUniqueRandomNumbers(1, 50, 3, silverMedals);
 
         function setRandomValue(radioId, spanId, value) {
             const radioButton = document.getElementById(radioId);
