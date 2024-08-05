@@ -47,5 +47,4 @@ $competitor1= $data_competitor['data'][0]['competitors'][11]['competitor_name'];
 $competitor2= $data_competitor['data'][0]['competitors'][4]['competitor_name'];
 $competitor3= $data_competitor['data'][1]['competitors'][7]['competitor_name'];
 $competitor_winn= "$competitor1, $competitor2, $competitor3";
-
 ?>

@@ -1,6 +1,10 @@
 <?php
 include_once('API/processed.php');
+session_start();
 
+if (isset($_POST['question5'])) {
+    $_SESSION['question5'] = $_POST['question5'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,18 +16,22 @@ include_once('API/processed.php');
 <body>
     <a href="index.php">Voltar</a>
     <h1>Quiz de Conhecimentos Gerais</h1>
-    <form action="process.php" method="post" required>
+    <form action="question7.php" method="post">
 
-        <p>6. Quantas medalhas de prata a China conquistou até o momento?</p>
-        <input type="radio" name="question6" value="<?php echo $data_countries['data'][0]['silver_medals']; ?>"><span><?php echo $data_countries['data'][0]['silver_medals']; ?></span><br>
-        <input type="radio" name="question6" id="radio1"><span id="radioValue1">9</span><br>
-        <input type="radio" name="question6" id="radio2"><span id="radioValue2">9</span><br>
-        <input type="radio" name="question6" id="radio3"><span id="radioValue3">9</span><br><br>
+        <p>6. Quantas medalhas de prata o país em 1º lugar conquistou até o momento?</p>
+        <input type="radio" name="question6" value="<?php echo $data_countries['data'][0]['silver_medals']; ?>" required>
+            <span><?php echo $data_countries['data'][0]['silver_medals']; ?></span><br>
+        <input type="radio" name="question6" id="radio1" required>
+            <span id="radioValue1">9</span><br>
+        <input type="radio" name="question6" id="radio2" required>
+            <span id="radioValue2">9</span><br>
+        <input type="radio" name="question6" id="radio3" required>
+            <span id="radioValue3">9</span><br><br>
 
-        <a href="question7.php">Próxima</a>
+        <input type="submit" value="Próxima">
     </form>
     <script>
-        const silverMedals = <?php echo $data_countries; ?>;
+        const silverMedals = <?php echo $silver_medals; ?>;
 
         function generateUniqueRandomNumbers(min, max, count, exclude) {
             let numbers = new Set();

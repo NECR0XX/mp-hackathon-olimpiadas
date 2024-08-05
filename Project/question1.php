@@ -1,5 +1,6 @@
 <?php
 include_once('API/processed.php');
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -12,15 +13,19 @@ include_once('API/processed.php');
 <body>
     <a href="index.php">Voltar</a>
     <h1>Quiz de Conhecimentos Gerais</h1>
-    <form action="process.php" method="post" required>
+    <form action="question2.php" method="post">
 
         <p>1. Em qual país ocorrerão os Jogos Olímpicos de 2024?</p>
-        <input type="radio" name="question1" value="Estados Unidos"><span>Estados Unidos</span><br>
-        <input type="radio" name="question1" value="Paris"><span>Paris</span><br>
-        <input type="radio" name="question1" value="China"><span>China</span><br>
-        <input type="radio" name="question1" value="<?php echo $country= $data_events['data'][4]['competitors'][0]['competitor_name']; ?>"><span>França</span><br><br>
+        <input type="radio" name="question1" value="Estados Unidos" required>
+            <span>Estados Unidos</span><br>
+        <input type="radio" name="question1" value="Paris" required>
+            <span>Paris</span><br>
+        <input type="radio" name="question1" value="China" required>
+            <span>China</span><br>
+        <input type="radio" name="question1" value="<?php echo $country= $data_events['data'][4]['competitors'][0]['competitor_name']; ?>" required>
+            <span>França</span><br><br>
 
-        <a href="question2.php">Próxima</a>
+        <input type="submit" value="Próxima">
     </form>
 </body>
 </html>
