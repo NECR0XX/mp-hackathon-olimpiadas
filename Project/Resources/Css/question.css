@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(146, 21, 69, 1);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    width: 900px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+img.quiz {
+    width: 210px;
+    height: 280px;
+}
+.header {
+    width: 100%;
+    height: 200px auto;
+    display: flex;
+    align-items: center;
+    color: rgba(101, 202, 193, 1);
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.text {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+}
+.text h1 {
+    font-size: 60px;
+    font-weight: normal;
+}
+.text p {
+    font-size: 30px;
+}
+.quest {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+form {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.radio-label:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+.radio-label input {
+    margin-right: 10px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: rgb(90, 226, 214);
+}
