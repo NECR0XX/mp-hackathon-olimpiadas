@@ -101,6 +101,7 @@ img.masc {
 
 .submit-button:hover {
     background-color: rgba(146, 21, 69, 1);
+    color: white;
 }
 
 @keyframes Right {
