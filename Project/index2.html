@@ -23,5 +23,18 @@
         </div>
         <a href="question1.php"><img class="set" src="Resources/Images/images-removebg-preview.png"></a>
     </section>
+    <div id="loadingScreen">
+        <img src="Resources/Images/Mascote_olimpiadas-removebg-preview.png" alt="Carregando">
+        <p>Carregando o seu quiz...</p>
+    </div>
+    <script>
+        document.querySelector('a[href="question1.php"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('loadingScreen').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

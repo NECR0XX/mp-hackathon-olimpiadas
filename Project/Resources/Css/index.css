@@ -21,6 +21,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -34,11 +35,11 @@ section {
 
 .container {
     width: 1068px;
-    height: 677px;
+    height: 627px;
     border-radius: 30px;
     background: rgba(249, 246, 229, 1);
     display: flex;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-left: 107px;
     align-items: center;
     box-shadow: 9px 8px 15px rgba(2, 99, 134, 0.42);
@@ -47,7 +48,6 @@ section {
 }
 
 img.masc {
-    position: fixed;
     width: 433px;
     height: 546px;
     margin-left: -157px;
@@ -68,13 +68,13 @@ img.set {
 img.set:hover {
     transform: translateX(10px);
 }
+
 .creators {
-    position: fixed;
     width: 130px;
+    margin: 20px;
     display: flex;
     justify-content: space-around;
-    margin-left: 920px;
-    margin-top: 575px;
+    margin-top: 550px;
     animation: Up 1s ease-out 0.8s;
     animation-fill-mode: backwards;
 }
@@ -88,10 +88,7 @@ img.users {
 
 .tooltip {
     display: none;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
     background-color: black;
     color: white;
     padding: 5px;
@@ -101,13 +98,14 @@ img.users {
     z-index: 1;
 }
 
-a:hover .tooltip {
+.creators a:hover .tooltip {
     display: block;
+
 }
+
 .title {
-    width: 800px;
+    width: 80%;
     height: 291px;
-    margin-left: 230px;
     display: flex;
     color: rgba(146, 21, 69, 1);
     text-align: center;
@@ -125,28 +123,205 @@ a:hover .tooltip {
 
 .title h1 {
     font-weight: normal;
-    font-size: 50px;
+    font-size: 2.5rem;
 }
 
 .title p {
-    font-size: 70px;
+    font-size: 4rem;
     text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.55);
     animation: Up 1s ease-out 0.8s;
     animation-fill-mode: backwards;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
     .container {
-        width: 95%;
+        width: 90%;
         height: auto;
         margin-left: 0;
         flex-direction: column;
-        padding: 20px;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+
     }
 
     img.masc {
         position: relative;
         width: 100px;
+        height: auto;
+        margin: -20px 0 40px 0;
+    }
+
+    .title {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .title p {
+        font-size: 30px;
+    }
+
+    img.set {
+        width: 25px;
+        height: auto;
+        margin: 10px;
+    }
+
+    .creators {
+        width: 90px;
+        margin-left: 10px;
+        margin-top: 40px;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    img.users {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    img.masc {
+        position: relative;
+        width: 100px;
+        height: auto;
+        margin: -20px 0 40px 0;
+    }
+
+    .title {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .title p {
+        font-size: 30px;
+    }
+
+    img.set {
+        width: 25px;
+        height: auto;
+        margin: 10px;
+    }
+
+    .creators {
+        width: 90px;
+        margin-left: 10px;
+        margin-top: 40px;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    img.users {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    img.masc {
+        position: relative;
+        width: 100px;
+        height: auto;
+        margin: -20px 0 40px 0;
+    }
+
+    .title {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .title p {
+        font-size: 30px;
+    }
+
+    img.set {
+        width: 25px;
+        height: auto;
+        margin: 10px;
+    }
+
+    .creators {
+        width: 90px;
+        margin-left: 10px;
+        margin-top: 40px;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    img.users {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 942px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    img.masc {
+        position: relative;
+        width: 120px;
         height: auto;
         margin: -20px 0 40px 0;
     }

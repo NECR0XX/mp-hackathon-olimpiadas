@@ -34,7 +34,7 @@ section {
 
 .container {
     width: 1068px;
-    height: 677px;
+    height: 627px;
     border-radius: 30px;
     background: rgba(249, 246, 229, 1);
     display: flex;
@@ -48,10 +48,10 @@ section {
 
 img.masc {
     position: fixed;
-    width: 375px;
-    height: 324px;
+    width: 325px;
+    height: 304px;
     margin-left: 920px;
-    margin-top: 450px;
+    margin-top: 380px;
     animation: Right 1s ease-out 0.5s;
     animation-fill-mode: backwards;
 }
@@ -102,8 +102,132 @@ img.set:hover {
 .conteudo p {
     font-size: 30px;
 }
+#loadingScreen {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 100;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.919);
+    z-index: 9999;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    color: #000;
+    font-size: 24px;
+}
 
-@media screen and (max-width: 375px) {
+#loadingScreen img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 376px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-top: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    img.masc {
+        position: relative;
+        width: 250px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .conteudo {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .conteudo p {
+        font-size: 20px;
+    }
+
+    img.set,
+    img.set1 {
+        width: 25px;
+        height: auto;
+        margin: 5px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-top: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    img.masc {
+        position: relative;
+        width: 250px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .conteudo {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .conteudo p {
+        font-size: 20px;
+    }
+
+    img.set,
+    img.set1 {
+        width: 25px;
+        height: auto;
+        margin: 5px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-top: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    img.masc {
+        position: relative;
+        width: 250px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .conteudo {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .conteudo p {
+        font-size: 20px;
+    }
+
+    img.set,
+    img.set1 {
+        width: 25px;
+        height: auto;
+        margin: 5px;
+    }
+}
+@media screen and (max-width: 942px) {
     .container {
         width: 90%;
         height: auto;
