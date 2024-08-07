@@ -1,5 +1,5 @@
 <?php
-function fetchDataFromApi5($url, $cacheFile = 'cache-foot.json', $cacheTime = 600) { 
+function fetchDataFromApi5($url, $cacheFile = 'cache-foot.json', $cacheTime = 1200) { 
     if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
         $data = file_get_contents($cacheFile);
     } else {

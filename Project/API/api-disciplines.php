@@ -1,5 +1,5 @@
 <?php
-function fetchDataFromApi2($url, $cacheFile = 'cache-disciplines.json', $cacheTime = 600) { 
+function fetchDataFromApi2($url, $cacheFile = 'cache-disciplines.json', $cacheTime = 1200) { 
     if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
         $data = file_get_contents($cacheFile);
     } else {

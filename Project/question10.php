@@ -28,7 +28,7 @@ if (isset($_POST['questão9'])) {
                 <img class="quiz" src="Resources/Images/quiz-removebg-preview.png">
                 <div class="text">
                     <h1>Pergunta 10</h1>
-                    <p>Qual foi a classificação das medalhas na final da modalidade Salto Feminino (Ginástica Artística)?</p>
+                    <p>Qual foi a classificação das medalhas na final da modalidade Salto Feminino geral individual(Ginástica Artística)?</p>
                 </div>
             </div>
             <div class="quest">

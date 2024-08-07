@@ -1,5 +1,5 @@
 <?php
-function fetchDataFromApi4($url, $cacheFile = 'cache-date.json', $cacheTime = 600) {
+function fetchDataFromApi4($url, $cacheFile = 'cache-date.json', $cacheTime = 1200) {
     if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
         $data = file_get_contents($cacheFile);
     } else {
