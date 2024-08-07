@@ -40,7 +40,7 @@ if (isset($_POST['questão2'])) {
                         </label>
                         <label class="radio-label">
                             <input type="radio" name="questão3" value="Austrália, China, EUA" required>
-                            <span>China, EUA, Austrália</span>
+                            <span>Austrália, China, EUA</span>
                         </label>
                         <label class="radio-label">
                             <input type="radio" name="questão3" value="<?php echo $podium= "$first, $second, $third"; ?>" required>
