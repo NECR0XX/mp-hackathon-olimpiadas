@@ -12,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: Up 1s ease-out;
 }
 .container {
     width: 900px;
@@ -29,6 +30,7 @@ img.quiz {
     display: flex;
     align-items: center;
     color: rgba(101, 202, 193, 1);
+    text-shadow: 2px 2px 5px rgba(101, 202, 194, 0.596);
     font-family: "Kiwi Maru", serif;
     font-weight: 400;
     font-style: normal;
@@ -61,6 +63,8 @@ form {
 .radio-group {
     display: flex;
     flex-direction: column;
+    animation: Up 1s ease-out 0.2s;
+    animation-fill-mode: backwards;
 }
 
 .radio-label {
@@ -72,6 +76,7 @@ form {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 5px 4px 15px rgba(255, 255, 255, 0.264);
 }
 
 .radio-label:hover {
@@ -92,8 +97,58 @@ form {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    animation: Up 1s ease-out 0.3s;
+    animation-fill-mode: backwards;
 }
 
 .submit-button:hover {
     background-color: rgb(90, 226, 214);
+}
+@keyframes Up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    img.quiz {
+        width: 150px;
+        height: auto;
+    }
+
+    .header {
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text h1 {
+        font-size: 40px;
+    }
+
+    .text p {
+        font-size: 20px;
+    }
+
+    .radio-label {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
 }

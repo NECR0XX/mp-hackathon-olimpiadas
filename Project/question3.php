@@ -2,8 +2,8 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question2'])) {
-    $_SESSION['question2'] = $_POST['question2'];
+if (isset($_POST['questão2'])) {
+    $_SESSION['questão2'] = $_POST['questão2'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,19 +35,19 @@ if (isset($_POST['question2'])) {
                 <form action="question4.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question3" value="França, Japão, EUA" required>
+                            <input type="radio" name="questão3" value="França, Japão, EUA" required>
                             <span>França, Japão, EUA</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question3" value="EUA, China, Austrália" required>
+                            <input type="radio" name="questão3" value="EUA, China, Austrália" required>
                             <span>China, EUA, Austrália</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question3" value="<?php echo $podium= "$first, $second, $third"; ?>" required>
+                            <input type="radio" name="questão3" value="<?php echo $podium= "$first, $second, $third"; ?>" required>
                             <span><?php echo $podium= "$first, $second, $third"; ?></span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question3" value="Grã-Bretanha, Japão, Brasil" required>
+                            <input type="radio" name="questão3" value="Grã-Bretanha, Japão, Brasil" required>
                             <span>Grã-Bretanha, Japão, Brasil</span>
                         </label>
                     </div>

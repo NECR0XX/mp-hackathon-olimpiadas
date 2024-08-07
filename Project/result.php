@@ -1,9 +1,12 @@
 <?php
 session_start();
 
+$acertos = isset($_SESSION['acertos']) ? $_SESSION['acertos'] : [];
+$erros = isset($_SESSION['erros']) ? $_SESSION['erros'] : [];
+
 $score = isset($_GET['score']) ? intval($_GET['score']) : 0;
 
-if ($score == 0 && $score <= 3) {
+if ($score >= 0 && $score <= 3) {
     $message = "Parece que as Olimpíadas não estão tão no seu radar. Que tal acompanhar mais de perto os próximos eventos?";
 } elseif ($score >= 4 && $score <= 6) {
     $message = "Você tem um bom conhecimento dos eventos olímpicos! Continue acompanhando para ficar ainda mais afiado.";
@@ -43,11 +46,48 @@ session_destroy();
             <div class="conteudo">
                 <h1>Sua pontuação: <?php echo $_GET['score']; ?> de 10</h1>
                 <p><?php echo $message; ?></p>
+                <button id="modalBtn" class="results">
+                    Ver acertos e erros
+                </button>
             </div>
-            <button>
-                Ver acertos e erros
-            </button>
         </div>
     </section>
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Acertos:</h3>
+            <ul>
+                <?php foreach ($acertos as $pergunta => $resposta) : ?>
+                    <li><?php echo "Pergunta $pergunta: $resposta"; ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <h3>Erros:</h3>
+            <ul>
+                <?php foreach ($erros as $pergunta => $resposta) : ?>
+                    <li><?php echo "Pergunta $pergunta: Sua resposta: " . ($resposta['usuario'] ?? 'Não respondida') . " | Resposta correta: " . $resposta['correta']; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("resultModal");
+        var btn = document.getElementById("modalBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -2,8 +2,8 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question1'])) {
-    $_SESSION['question1'] = $_POST['question1'];
+if (isset($_POST['questão1'])) {
+    $_SESSION['questão1'] = $_POST['questão1'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,19 +35,19 @@ if (isset($_POST['question1'])) {
                 <form action="question3.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question2" value="<?php echo $start= $data['data'][0]['day'] ?>" required>
+                            <input type="radio" name="questão2" value="<?php echo $start= $data['data'][0]['day'] ?>" required>
                             <span>26/07/2024</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question2" value="25/07/2024" required>
+                            <input type="radio" name="questão2" value="25/07/2024" required>
                             <span>25/07/2024</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question2" value="27/07/2024" required>
+                            <input type="radio" name="questão2" value="27/07/2024" required>
                             <span>27/07/2024</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question2" value="28/07/2024" required>
+                            <input type="radio" name="questão2" value="28/07/2024" required>
                             <span>28/07/2024</span>
                         </label>
                     </div>

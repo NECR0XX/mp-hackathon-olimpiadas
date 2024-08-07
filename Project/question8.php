@@ -2,8 +2,8 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question7'])) {
-    $_SESSION['question7'] = $_POST['question7'];
+if (isset($_POST['questão7'])) {
+    $_SESSION['questão7'] = $_POST['questão7'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,19 +35,19 @@ if (isset($_POST['question7'])) {
                 <form action="question9.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question8" value="Japão, Paraguai, Estados Unidos, Argentina" required>
+                            <input type="radio" name="questão8" value="Japão, Paraguai, Estados Unidos, Argentina" required>
                             <span>Japão, Paraguai, Estados Unidos, Argentina</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question8" value="Espanha, Egito, Republica Dominicana, Uzbequistão" required>
+                            <input type="radio" name="questão8" value="Espanha, Egito, Republica Dominicana, Uzbequistão" required>
                             <span>Espanha, Egito, Republica Dominicana, Uzbequistão</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question8" value="<?php echo $winners= "$winner1, $winner2, $winner3, $winner4"; ?>" required>
+                            <input type="radio" name="questão8" value="<?php echo $winners= "$winner1, $winner2, $winner3, $winner4"; ?>" required>
                             <span><?php echo $winners= "$winner1, $winner2, $winner3, $winner4"; ?></span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question8" value="Argentina, Marrocos, Iraque, Ucrânia" required>
+                            <input type="radio" name="questão8" value="Argentina, Marrocos, Iraque, Ucrânia" required>
                             <span>Argentina, Marrocos, Iraque, Ucrânia</span>
                         </label>
                     </div>

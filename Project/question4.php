@@ -2,8 +2,8 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question3'])) {
-    $_SESSION['question3'] = $_POST['question3'];
+if (isset($_POST['questão3'])) {
+    $_SESSION['questão3'] = $_POST['questão3'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,19 +35,19 @@ if (isset($_POST['question3'])) {
                 <form action="question5.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question4" value="North Paris Arena" required>
+                            <input type="radio" name="questão4" value="North Paris Arena" required>
                             <span>North Paris Arena</span><br>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question4" value="<?php echo $venue= $data_venues['data'][29]['name']; ?>" required>
+                            <input type="radio" name="questão4" value="<?php echo $venue= $data_venues['data'][29]['name']; ?>" required>
                             <span><?php echo $venue= $data_venues['data'][29]['name']; ?></span><br><br>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question4" value="Eiffel Tower Stadium" required>
+                            <input type="radio" name="questão4" value="Eiffel Tower Stadium" required>
                             <span>Eiffel Tower Stadium</span><br>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question4" value="Geoffroy-Guichard Stadium" required>
+                            <input type="radio" name="questão4" value="Geoffroy-Guichard Stadium" required>
                             <span>Geoffroy-Guichard Stadium</span><br>
                         </label>
                     </div>

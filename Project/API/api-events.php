@@ -1,5 +1,5 @@
 <?php
-function fetchDataFromApi6($url, $cacheFile = 'cache-events.json', $cacheTime = 420) { // 7 minutos = 420 segundos
+function fetchDataFromApi6($url, $cacheFile = 'cache-events.json', $cacheTime = 600) { 
     if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
         $data = file_get_contents($cacheFile);
     } else {

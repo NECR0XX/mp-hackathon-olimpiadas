@@ -2,8 +2,8 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question9'])) {
-    $_SESSION['question9'] = $_POST['question9'];
+if (isset($_POST['questão9'])) {
+    $_SESSION['questão9'] = $_POST['questão9'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,19 +35,19 @@ if (isset($_POST['question9'])) {
                 <form action="process.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question10" value="Simone BILES, Sunisa LEE, Rebeca ANDRADE" required>
+                            <input type="radio" name="questão10" value="Simone BILES, Sunisa LEE, Rebeca ANDRADE" required>
                             <span>Simone BILES, Sunisa LEE, Rebeca ANDRADE</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question10" value="<?php echo $competitor_winn= "$competitor1, $competitor2, $competitor3"; ?>" required>
+                            <input type="radio" name="questão10" value="<?php echo $competitor_winn= "$competitor1, $competitor2, $competitor3"; ?>" required>
                             <span><?php echo $competitor_winn= "$competitor1, $competitor2, $competitor3"; ?></span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question10" value="Rayssa LEAL, Bia FERREIRA, Simone BILES" required>
+                            <input type="radio" name="questão10" value="Rayssa LEAL, Bia FERREIRA, Simone BILES" required>
                             <span>Rayssa LEAL, Bia FERREIRA, Simone BILES</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question10" value="Rebeca ANDRADE, Jade CAREY, Simone BILES" required>
+                            <input type="radio" name="questão10" value="Rebeca ANDRADE, Jade CAREY, Simone BILES" required>
                             <span>Rebeca ANDRADE, Jade CAREY, Simone BILES</span>
                         </label>
                     </div>

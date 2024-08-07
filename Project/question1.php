@@ -32,19 +32,19 @@ session_start();
                 <form action="question2.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question1" value="Estados Unidos" required>
+                            <input type="radio" name="questão1" value="Estados Unidos" required>
                             <span>Estados Unidos</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question1" value="Paris" required>
+                            <input type="radio" name="questão1" value="Paris" required>
                             <span>Paris</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question1" value="China" required>
+                            <input type="radio" name="questão1" value="China" required>
                             <span>China</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question1" value="<?php echo $country= $data_events['data'][4]['competitors'][0]['competitor_name']; ?>" required>
+                            <input type="radio" name="questão1" value="<?php echo $country= $data_events['data'][4]['competitors'][0]['competitor_name']; ?>" required>
                             <span>França</span>
                         </label>
                     </div>

@@ -2,8 +2,8 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question5'])) {
-    $_SESSION['question5'] = $_POST['question5'];
+if (isset($_POST['questão5'])) {
+    $_SESSION['questão5'] = $_POST['questão5'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,19 +35,19 @@ if (isset($_POST['question5'])) {
                 <form action="question7.php" method="post">
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="question6" id="radio1" required>
+                            <input type="radio" name="questão6" id="radio1" required>
                             <span id="radioValue1">9</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question6" value="<?php echo $data_countries['data'][0]['silver_medals']; ?>" required>
+                            <input type="radio" name="questão6" value="<?php echo $data_countries['data'][0]['silver_medals']; ?>" required>
                             <span><?php echo $data_countries['data'][0]['silver_medals']; ?></span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question6" id="radio2" required>
+                            <input type="radio" name="questão6" id="radio2" required>
                             <span id="radioValue2">9</span>
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="question6" id="radio3" required>
+                            <input type="radio" name="questão6" id="radio3" required>
                             <span id="radioValue3">9</span>
                         </label>
                     </div>

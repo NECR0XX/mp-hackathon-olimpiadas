@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgba(101, 202, 193, 1);
@@ -12,11 +13,25 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: Right 1s ease-out;
 }
+
+@keyframes Right {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 section {
     display: flex;
     align-items: center;
 }
+
 .container {
     width: 1068px;
     height: 677px;
@@ -26,25 +41,46 @@ section {
     margin-top: 30px;
     justify-content: center;
     align-items: center;
+    animation: Right 1s ease-out 0.3s;
+    animation-fill-mode: backwards;
+    box-shadow: 9px 8px 15px rgba(2, 99, 134, 0.42);
 }
+
 img.masc {
     position: fixed;
     width: 375px;
     height: 324px;
     margin-left: 920px;
     margin-top: 450px;
+    animation: Right 1s ease-out 0.5s;
+    animation-fill-mode: backwards;
 }
+
 img.set1 {
     transform: rotate(180deg);
+    transition: transform 0.3s ease;
     margin: 20px;
     width: 66px;
     height: 55px;
+    animation: Right 1s ease-out 0.7s;
+    animation-fill-mode: backwards;
 }
+
+img.set1:hover {
+    transform: rotate(180deg) translateX(10px);
+}
+
 img.set {
     margin: 20px;
     width: 66px;
     height: 55px;
+    transition: transform 0.3s ease;
 }
+
+img.set:hover {
+    transform: translateX(10px);
+}
+
 .conteudo {
     width: 800px;
     height: 291px;
@@ -58,7 +94,47 @@ img.set {
     font-weight: 400;
     font-style: normal;
     cursor: default;
+    animation: Right 1s ease-out 1.1s;
+    animation-fill-mode: backwards;
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.578);
 }
+
 .conteudo p {
     font-size: 30px;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        width: 90%;
+        height: auto;
+        margin-top: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    img.masc {
+        position: relative;
+        width: 250px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .conteudo {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .conteudo p {
+        font-size: 20px;
+    }
+
+    img.set,
+    img.set1 {
+        width: 25px;
+        height: auto;
+        margin: 5px;
+    }
 }

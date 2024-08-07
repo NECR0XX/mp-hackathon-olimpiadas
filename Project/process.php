@@ -2,16 +2,29 @@
 include_once('API/processed.php');
 session_start();
 
-if (isset($_POST['question10'])) {
-    $_SESSION['question10'] = $_POST['question10'];
+if (isset($_POST['questão10'])) {
+    $_SESSION['questão10'] = $_POST['questão10'];
 }
 
-function calcularPontos($respostasUsuario, $respostasCorretas) {
+function calcularPontos($respostasUsuario, $respostasCorretas, &$acertos, &$erros) {
     $pontuacao = 0;
 
     foreach ($respostasCorretas as $pergunta => $respostaCorreta) {
-        if (isset($respostasUsuario[$pergunta]) && $respostasUsuario[$pergunta] == $respostaCorreta) {
-            $pontuacao++;
+        if (isset($respostasUsuario[$pergunta])) {
+            if ($respostasUsuario[$pergunta] == $respostaCorreta) {
+                $pontuacao++;
+                $acertos[$pergunta] = $respostaCorreta;
+            } else {
+                $erros[$pergunta] = [
+                    'correta' => $respostaCorreta,
+                    'usuario' => $respostasUsuario[$pergunta]
+                ];
+            }
+        } else {
+            $erros[$pergunta] = [
+                'correta' => $respostaCorreta,
+                'usuario' => null
+            ];
         }
     }
 
@@ -19,33 +32,39 @@ function calcularPontos($respostasUsuario, $respostasCorretas) {
 }
 
 $respostasCorretas = [
-    'question1' => $country,
-    'question2' => $start,
-    'question3' => $podium,
-    'question4' => $venue,
-    'question5' => $sport,
-    'question6' => $silver_medals,
-    'question7' => $total_sports,
-    'question8' => $winners,
-    'question9' => $total_countries,
-    'question10' => $competitor_winn
+    'questão1' => $country,
+    'questão2' => $start,
+    'questão3' => $podium,
+    'questão4' => $venue,
+    'questão5' => $sport,
+    'questão6' => $silver_medals,
+    'questão7' => $total_sports,
+    'questão8' => $winners,
+    'questão9' => $total_countries,
+    'questão10' => $competitor_winn
 ];
 
 $respostasUsuario = [
-    'question1' => $_SESSION['question1'],
-    'question2' => $_SESSION['question2'],
-    'question3' => $_SESSION['question3'],
-    'question4' => $_SESSION['question4'],
-    'question5' => $_SESSION['question5'],
-    'question6' => $_SESSION['question6'],
-    'question7' => $_SESSION['question7'],
-    'question8' => $_SESSION['question8'],
-    'question9' => $_SESSION['question9'],
-    'question10' => $_SESSION['question10']
+    'questão1' => $_SESSION['questão1'],
+    'questão2' => $_SESSION['questão2'],
+    'questão3' => $_SESSION['questão3'],
+    'questão4' => $_SESSION['questão4'],
+    'questão5' => $_SESSION['questão5'],
+    'questão6' => $_SESSION['questão6'],
+    'questão7' => $_SESSION['questão7'],
+    'questão8' => $_SESSION['questão8'],
+    'questão9' => $_SESSION['questão9'],
+    'questão10' => $_SESSION['questão10']
 ];
 
-$score = calcularPontos($respostasUsuario, $respostasCorretas);
+$acertos = [];
+$erros = [];
+
+$score = calcularPontos($respostasUsuario, $respostasCorretas, $acertos, $erros);
+
+$_SESSION['acertos'] = $acertos;
+$_SESSION['erros'] = $erros;
 
 header("Location: result.php?score=$score");
 exit();
-?> 
+?>
